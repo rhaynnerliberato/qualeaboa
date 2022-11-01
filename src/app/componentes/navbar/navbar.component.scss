@@ -1,0 +1,9 @@
+.navbar {
+  position:absolute;
+    width: 100%;
+    height:auto;
+}
+
+.navbar, .navbar-fixed-top, .navbar-defeault {
+  z-index:1!important;
+  }
