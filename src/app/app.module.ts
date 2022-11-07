@@ -7,19 +7,27 @@ import { CarouselComponent } from './componentes/carousel/carousel.component';
 import { CarouselModule } from './componentes/carousel/carousel.module';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { NavbarModule } from './componentes/navbar/navbar.module';
+import { PaginationComponent } from './componentes/paginations/pagination.component';
+import { CardsComponent } from './componentes/cards/cards.component';
+import { CardsModule } from './componentes/cards/cards.module';
+import { PaginationModule } from './componentes/paginations/pagination.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CarouselComponent,
-    NavbarComponent
+    NavbarComponent,
+    PaginationComponent,
+    CardsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CarouselModule,
-    NavbarModule
+    NavbarModule,
+    PaginationModule,
+    CardsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,16 +7,35 @@
   <title>Qual é a Boa?</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
  </head>
-<body>
+  <body>
 
-  <app-navbar></app-navbar>
-  <br>
-  <br>
-  <br>
-  <app-carousel
-    [images]="images"
-    [autoSlide]="true"
-  ></app-carousel>
+    <div class="row nav-bar">
+      <app-navbar></app-navbar>
+    </div>
 
-</body>
+    <br>
+    <br>
+    <br>
+
+    <div class="row mt-3">
+      <app-carousel
+        [images]="images"
+        [autoSlide]="true"
+      ></app-carousel>
+    </div>
+
+    <div class="row mt-3" id="cards">
+      <app-cards
+        [images]="images"
+      ></app-cards>
+    </div>
+
+    <button *ngIf="showButton"
+      class="button"
+      (click)="showTop()"
+      >⬆️
+    </button>
+
+
+  </body>
 </html>
