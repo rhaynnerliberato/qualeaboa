@@ -12,7 +12,6 @@ import { ImagesService } from './services/images.service';
 export class AppComponent implements OnInit {
 
   title = 'qualeaboa';
-  //public images?: any;
   public showButton = false;
   private scrollHeight = 500;
   public dados: Array<InstagramResponse> = [];
@@ -28,7 +27,6 @@ export class AppComponent implements OnInit {
   }
 
   recuperarImagens() : void {
-    //this.images = this.imgService.getImages();
 
     this.imgService.listarMidiasInstagram().subscribe(
       response => {
