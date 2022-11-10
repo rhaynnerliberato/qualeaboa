@@ -9,12 +9,17 @@ import { InstagramResponse } from '../models/responses/instagram-response.respon
 export class CardsComponent implements OnInit {
 
   @Input() dados?: Array<InstagramResponse>;
-  public imagesCard: any;
+  public urlInstagram = "https://www.instagram.com/";
+  public urlProfile: string = "";
 
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  openProfileInstagram(userName: any): void {
+    this.urlProfile = this.urlInstagram + userName;
   }
 
 }

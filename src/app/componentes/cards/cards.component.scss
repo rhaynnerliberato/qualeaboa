@@ -7,7 +7,28 @@
   box-shadow: 0.1px #dce1e1;
 }
 
-img {
-  width: 400px;
+.card-caption {
+  align-content: center;
   height: 200px;
+  width: 650px;
+}
+
+img {
+  width: 350px;
+  height: 280px;
+}
+
+.logo-instagram {
+  width: 25px;
+  height: 25px;
+}
+
+.text-muted {
+  position: absolute;
+  right: 0;
+  left: 350px;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  padding: 0;
 }

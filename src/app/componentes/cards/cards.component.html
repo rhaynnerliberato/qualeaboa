@@ -5,9 +5,22 @@
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">{{card?.username}}</h5>
-        <p class="card-text">{{card?.caption}}</p>
-        <p class="card-text"><small class="text-muted">{{card?.timestamp | date : 'dd/MM/yyyy - HH:mm'}}</small></p>
+        <div class="row">
+          <h5 class="card-title">
+            <a href="{{urlProfile}}" target="_blank">
+              <img (click)="openProfileInstagram(card?.username)"
+              type="button"
+              class="logo-instagram"
+              src="https://static.cdninstagram.com/rsrc.php/v3/yb/r/lswP1OF1o6P.png"
+              >
+            </a>
+            {{card?.username}}
+          </h5>
+        </div>
+        <div class="row card-caption" >
+          <p class="card-text">{{card?.caption}}</p>
+        </div>
+        <p class="card-text"><small class="text-muted">Publicado em {{card?.timestamp | date : 'dd/MM/yyyy - HH:mm'}}</small></p>
       </div>
     </div>
   </div>

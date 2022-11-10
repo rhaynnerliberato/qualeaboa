@@ -27,16 +27,11 @@ export class AppComponent implements OnInit {
   }
 
   recuperarImagens() : void {
-
     this.imgService.listarMidiasInstagram().subscribe(
       response => {
         this.dados = response.data;
-
-        console.log(this.dados);
       }
     );
-
-
   }
 
   @HostListener('window:scroll')
