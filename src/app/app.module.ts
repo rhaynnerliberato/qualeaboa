@@ -11,6 +11,8 @@ import { PaginationComponent } from './componentes/paginations/pagination.compon
 import { CardsComponent } from './componentes/cards/cards.component';
 import { CardsModule } from './componentes/cards/cards.module';
 import { PaginationModule } from './componentes/paginations/pagination.module';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -28,6 +30,8 @@ import { PaginationModule } from './componentes/paginations/pagination.module';
     NavbarModule,
     PaginationModule,
     CardsModule,
+    HttpClientModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

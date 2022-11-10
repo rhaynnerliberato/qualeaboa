@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { InstagramResponse } from '../models/responses/instagram-response.response';
 
 @Component({
   selector: 'app-cards',
@@ -7,16 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CardsComponent implements OnInit {
 
-  @Input() images?: any;
+  @Input() dados?: Array<InstagramResponse>;
   public imagesCard: any;
 
 
   constructor() { }
 
   ngOnInit(): void {
-    if(this.images){
-      this.imagesCard = this.images;
-    }
   }
 
 }

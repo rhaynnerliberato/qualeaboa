@@ -1,9 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-
-interface carouselImage {
-  imageSrc: string;
-  imageAlt: string;
-}
+import { InstagramResponse } from '../models/responses/instagram-response.response';
 
 @Component({
   selector: 'app-carousel',
@@ -12,11 +8,11 @@ interface carouselImage {
 })
 export class CarouselComponent implements OnInit {
 
-  @Input() images: carouselImage[] = [];
+  @Input() dados?: Array<InstagramResponse>;
   @Input() indicators = true;
   @Input() controls = true;
   @Input() autoSlide = false;
-  @Input() slideInterval = 3500;
+  @Input() slideInterval = 5000;
 
   selectedIndex = 0;
 
@@ -36,8 +32,8 @@ export class CarouselComponent implements OnInit {
   }
 
   onPrevClick(): void {
-    if(this.selectedIndex === 0){
-      this.selectedIndex = this.images.length -1;
+    if(this.selectedIndex === 0 && this.dados){
+      this.selectedIndex = this.dados.length -1;
     }
     else {
       this.selectedIndex --;
@@ -45,7 +41,7 @@ export class CarouselComponent implements OnInit {
   }
 
   onNextClick(): void {
-    if(this.selectedIndex === this.images.length - 1){
+    if(this.dados && this.selectedIndex === this.dados.length - 1){
       this.selectedIndex = 0;
     }
     else {

@@ -1,6 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { ImagesResponse } from './componentes/models/responses/images-response.response';
+import { InstagramResponse } from './componentes/models/responses/instagram-response.response';
 import { ImagesService } from './services/images.service';
 
 @Component({
@@ -11,9 +12,10 @@ import { ImagesService } from './services/images.service';
 export class AppComponent implements OnInit {
 
   title = 'qualeaboa';
-  public images?: any;
+  //public images?: any;
   public showButton = false;
   private scrollHeight = 500;
+  public dados: Array<InstagramResponse> = [];
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
@@ -26,7 +28,17 @@ export class AppComponent implements OnInit {
   }
 
   recuperarImagens() : void {
-    this.images = this.imgService.getImages();
+    //this.images = this.imgService.getImages();
+
+    this.imgService.listarMidiasInstagram().subscribe(
+      response => {
+        this.dados = response.data;
+
+        console.log(this.dados);
+      }
+    );
+
+
   }
 
   @HostListener('window:scroll')
